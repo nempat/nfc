@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#141310">
+<meta name="description" content="Share your experience with NEMPAT.">
+<title>Share your experience · NEMPAT</title>
+<style>
+:root{--bg:#141310;--panel:#211f1a;--panel2:#29261f;--gold:#d9bd83;--goldlight:#f2deae;--text:#f8f5ec;--muted:#a9a295;--line:rgba(226,204,157,.2);--error:#edbba7}
+*{box-sizing:border-box}html,body{min-height:100%;margin:0}body{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(ellipse at 10% 10%,#343026 0,transparent 33%),radial-gradient(ellipse at 95% 100%,#302920 0,transparent 45%),var(--bg);-webkit-font-smoothing:antialiased}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.1;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 180 180%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.73%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%22.25%22/%3E%3C/svg%3E')}
+.shell{width:min(100% - 30px,530px);margin:auto;min-height:100dvh;display:flex;flex-direction:column;padding:clamp(24px,5vh,48px) 0 25px;position:relative}.header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:26px}.wordmark{font-size:15px;font-weight:760;letter-spacing:.27em}.mark{width:30px;height:30px;border:1px solid var(--gold);border-radius:9px;display:grid;place-items:center;color:var(--gold);font-size:19px;transform:rotate(-8deg)}.branding{display:flex;align-items:center;gap:12px}.edition{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.2em}
+.panel{position:relative;overflow:hidden;flex:1;background:linear-gradient(145deg,rgba(42,39,32,.98),rgba(28,27,23,.98));border:1px solid var(--line);border-radius:24px;box-shadow:0 28px 60px rgba(0,0,0,.27),inset 0 1px rgba(255,255,255,.05);padding:clamp(26px,6vw,47px) clamp(22px,6vw,42px);display:flex;flex-direction:column;justify-content:center}.panel:before{content:"";position:absolute;right:-105px;top:-130px;width:280px;height:280px;border:1px solid rgba(217,189,131,.13);border-radius:50%;box-shadow:0 0 0 38px rgba(217,189,131,.025),0 0 0 78px rgba(217,189,131,.018);pointer-events:none}.panel>div,.panel>form{position:relative}
+.tag{font-size:10px;font-weight:700;letter-spacing:.23em;text-transform:uppercase;color:var(--gold);margin:0 0 26px;display:flex;gap:10px;align-items:center}.tag:before{content:"";width:20px;height:1px;background:var(--gold)}h1{font-family:Georgia,Times,serif;font-weight:400;font-size:clamp(38px,8.1vw,57px);line-height:1.12;letter-spacing:-.04em;margin:0 0 17px}h1 em{font-weight:400;color:var(--goldlight)}.sub{color:var(--muted);line-height:1.7;font-size:14px;margin:0 0 32px;max-width:350px}.line{height:1px;background:var(--line);margin:0 0 28px}.question{font-size:12px;font-weight:650;letter-spacing:.04em;margin:0 0 15px}.stars{display:flex;align-items:center;gap:clamp(5px,2vw,13px);justify-content:space-between}.star{border:1px solid transparent;background:rgba(255,255,255,.035);color:#787266;border-radius:12px;flex:1;min-width:0;height:clamp(51px,13vw,66px);font-size:clamp(28px,7vw,37px);cursor:pointer;transition:transform .17s,background .17s,color .17s,border-color .17s;touch-action:manipulation}.star:hover,.star:focus-visible{transform:translateY(-3px);border-color:var(--gold);outline:none}.star.active{color:var(--goldlight);background:rgba(217,189,131,.14)}.legend{display:flex;justify-content:space-between;margin:13px 2px 0;font-size:11px;color:var(--muted)}.hint{margin:31px 0 0;color:#a9a397;font-size:11px;line-height:1.6;text-align:center}.hint svg{vertical-align:middle;margin-right:4px}.foot{display:flex;align-items:center;justify-content:space-between;margin-top:22px;color:#8e897e;font-size:10px;letter-spacing:.06em}.foot span:last-child{color:var(--gold)}
+[hidden]{display:none!important}.back{border:0;background:none;color:var(--gold);font-size:12px;cursor:pointer;padding:0;margin:0 0 28px;text-align:left;width:max-content}.field{display:flex;flex-direction:column;gap:8px;margin:0 0 15px}.field label{font-size:12px;font-weight:600}input,textarea{font:inherit;line-height:1.45;background:#171612;border:1px solid rgba(226,204,157,.24);border-radius:11px;padding:13px;color:var(--text);outline:none;width:100%}input:focus,textarea:focus{border-color:var(--gold)}textarea{resize:vertical;min-height:125px}.primary,.secondary{width:100%;border-radius:11px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;padding:15px}.primary{color:#171410;background:linear-gradient(105deg,#e6c892,#f4dfb0);border:0}.secondary{background:transparent;color:var(--text);border:1px solid var(--line);margin-top:10px}.privacy{font-size:11px;color:var(--muted);line-height:1.6;margin:15px 0 0}.message{font-size:12px;line-height:1.5;color:var(--goldlight);margin:12px 0 0;min-height:20px}.confirm{background:#1c221b;border:1px solid rgba(196,222,166,.2);border-radius:12px;padding:15px;margin:15px 0;line-height:1.5;color:#e4eccf;font-size:13px}
+@media(max-width:380px){.edition{display:none}.panel{padding:26px 18px}.wordmark{letter-spacing:.19em}.shell{width:min(100% - 20px,530px)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="shell">
+<header class="header"><div class="branding"><div class="mark" aria-hidden="true">✧</div><span class="wordmark">NEMPAT</span></div><span class="edition">Your voice matters</span></header>
+<section class="panel" aria-live="polite">
+<div id="ratingView">
+<p class="tag">The experience</p>
+<h1>Every opinion<br><em>matters.</em></h1>
+<p class="sub">Thank you for being here. We'd love to know how your experience with NEMPAT went.</p>
+<div class="line"></div>
+<p class="question">How would you rate your experience?</p>
+<div class="stars" role="group" aria-label="Rate your experience from 1 to 5 stars">
+<button class="star" type="button" data-rating="1" aria-label="1 out of 5 stars">★</button>
+<button class="star" type="button" data-rating="2" aria-label="2 out of 5 stars">★</button>
+<button class="star" type="button" data-rating="3" aria-label="3 out of 5 stars">★</button>
+<button class="star" type="button" data-rating="4" aria-label="4 out of 5 stars">★</button>
+<button class="star" type="button" data-rating="5" aria-label="5 out of 5 stars">★</button>
+</div>
+<div class="legend"><span>Could be better</span><span>Outstanding</span></div>
+<p class="hint">Your choice takes you to the next step. No account needed.</p>
+</div>
+<div id="privateView" hidden>
+<button class="back" id="back" type="button">← Back to rating</button>
+<p class="tag">Private feedback</p>
+<h1>Help us<br><em>improve.</em></h1>
+<p class="sub">Thanks for your honest feedback. This message is private and isn't a public review.</p>
+<form id="feedbackForm">
+<div class="field"><label for="message">What could we do better? <span aria-hidden="true">*</span></label><textarea id="message" name="message" maxlength="2000" required placeholder="Tell us about your experience…"></textarea></div>
+<div class="field"><label for="name">Your name <span style="color:var(--muted)">(optional)</span></label><input id="name" name="name" maxlength="100" autocomplete="name" placeholder="Your name"></div>
+<button class="primary" type="submit">Prepare private feedback →</button>
+<p class="privacy">For privacy, this page does not send or store feedback automatically. Your device will open sharing options so you can choose where to send it.</p>
+<p id="feedbackStatus" class="message" role="status"></p>
+</form>
+</div>
+<div id="preparedView" hidden>
+<button class="back" id="preparedBack" type="button">← Back to feedback</button>
+<p class="tag">Feedback ready</p>
+<h1>Thank you for<br><em>sharing.</em></h1>
+<p class="sub">Your message has been prepared but not yet sent to NEMPAT.</p>
+<div class="confirm" id="preparedText"></div>
+<button type="button" class="primary" id="share">Share feedback</button>
+<button type="button" class="secondary" id="copy">Copy feedback</button>
+<p id="shareStatus" class="message" role="status"></p>
+</div>
+</section>
+<footer class="foot"><span>© <span id="year"></span> NEMPAT</span><span>Made with care ✦</span></footer>
+</main>
+<script>
+'use strict';
+const CONFIG = { positiveDestination: 'http://localhost:3000/' }; // Replace with a PUBLIC HTTPS URL before using NFC cards with customers.
+const ratingView = document.getElementById('ratingView');
+const privateView = document.getElementById('privateView');
+const preparedView = document.getElementById('preparedView');
+const stars = [...document.querySelectorAll('[data-rating]')];
+let chosenRating = 0;
+let preparedMessage = '';
+const show = view => { [ratingView,privateView,preparedView].forEach(el=>el.hidden=el!==view); window.scrollTo({top:0,behavior:'instant'}); };
+const paint = n => stars.forEach(button => { const active = Number(button.dataset.rating) <= n; button.classList.toggle('active',active); button.setAttribute('aria-pressed', String(Number(button.dataset.rating)===n)); });
+stars.forEach(button => {
+  const n = Number(button.dataset.rating);
+  button.addEventListener('mouseenter',()=>paint(n));
+  button.addEventListener('focus',()=>paint(n));
+  button.addEventListener('click',()=>{
+    chosenRating=n;
+    if(n>=4) { window.location.assign(CONFIG.positiveDestination); return; }
+    paint(n); show(privateView); document.getElementById('message').focus();
+  });
+});
+document.querySelector('.stars').addEventListener('mouseleave',()=>paint(chosenRating));
+document.getElementById('back').addEventListener('click',()=>show(ratingView));
+document.getElementById('preparedBack').addEventListener('click',()=>show(privateView));
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('feedbackForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  if(!e.currentTarget.reportValidity()) return;
+  const message=document.getElementById('message').value.trim();
+  if(!message){ document.getElementById('feedbackStatus').textContent='Please enter your feedback.'; return; }
+  const name=document.getElementById('name').value.trim();
+  preparedMessage=`NEMPAT private feedback\nRating: ${chosenRating}/5\n${name ? `Name: ${name}\n`:''}Message: ${message}`;
+  document.getElementById('preparedText').textContent=preparedMessage;
+  document.getElementById('shareStatus').textContent='';
+  show(preparedView);
+});
+document.getElementById('share').addEventListener('click',async()=>{
+ const status=document.getElementById('shareStatus');
+ if(!navigator.share){status.textContent='Sharing is unavailable here. Please use “Copy feedback” instead.';return;}
+ try{await navigator.share({title:'NEMPAT private feedback',text:preparedMessage});status.textContent='Sharing completed on this device. Please verify that your message was sent.';}
+ catch(err){status.textContent=err.name==='AbortError'?'Sharing cancelled.':'Sharing failed. Please use “Copy feedback”.';}
+});
+document.getElementById('copy').addEventListener('click',async()=>{
+ const status=document.getElementById('shareStatus');
+ try{
+   if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(preparedMessage);status.textContent='Copied! Paste it into your preferred messaging app.';return;}
+   const t=document.createElement('textarea');t.value=preparedMessage;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();const ok=document.execCommand('copy');t.remove();if(!ok)throw Error('Copy unavailable');status.textContent='Copied! Paste it into your preferred messaging app.';
+ }catch{status.textContent='Copy not supported here. Select and copy the feedback text shown above.';}
+});
+</script>
+</body>
+</html>
