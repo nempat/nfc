@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101817"><meta name="description" content="Share a Google review or send private feedback to Universal Kebabs & Biryani."><title>Share your feedback | Universal Kebabs & Biryani</title><link rel="stylesheet" href="style.css"></head><body><main class="shell"><div class="top"><span class="mini-icon">✦</span><span>WE VALUE YOUR FEEDBACK</span></div><section class="panel"><div class="brand-mark" aria-hidden="true">UK<span>&</span>B</div><p class="eyebrow">UNIVERSAL KEBABS & BIRYANI</p><div class="chosen" id="chosen" aria-label="Your selected rating"></div><h1>Thank you for<br><em>sharing.</em></h1><p class="subtitle">Choose how you'd like to share your experience. Both options are available for every rating.</p><a id="google" class="action primary" href="https://maps.app.goo.gl/6rMh8zu8S1CyNHfe8" target="_blank" rel="noopener noreferrer"><span class="action-icon">★</span><span><strong>Review on Google</strong><small>Public review · Opens Google Maps</small></span><span class="end">↗</span></a><button class="action secondary" type="button" id="private"><span class="action-icon">✉</span><span><strong>Send private feedback</strong><small>Not posted publicly</small></span><span class="end">→</span></button><form id="form" class="feedback-form" hidden><label for="message">Your feedback</label><textarea id="message" rows="4" placeholder="Tell us about your experience..." maxlength="2000" required></textarea><p class="form-note">This is private feedback. It won't be posted to Google. You can copy your message to share with the restaurant directly.</p><button class="submit" type="submit">Copy feedback message</button><p id="result" role="status" class="result" aria-live="polite"></p><textarea id="fallback" class="copy-fallback" aria-label="Feedback text to copy" rows="5" readonly hidden></textarea></form><a class="back" href="index.html">← Change rating</a></section><footer>Your choice · Public review or private feedback</footer></main><script>const q=new URLSearchParams(location.search);let rating=Number(q.get('rating'));if(!Number.isInteger(rating)||rating<1||rating>5)rating=0;document.getElementById('chosen').textContent=rating?'★'.repeat(rating)+'☆'.repeat(5-rating):'No rating selected';const f=document.getElementById('form');document.getElementById('private').addEventListener('click',()=>{f.hidden=false;document.getElementById('message').focus();});f.addEventListener('submit',async e=>{
+ e.preventDefault();
+ const m=document.getElementById('message').value.trim();
+ const result=document.getElementById('result');
+ const fallback=document.getElementById('fallback');
+ if(!m){result.textContent='Please enter your feedback first.';return;}
+ const content='Universal Kebabs & Biryani feedback\nRating: '+(rating||'Not selected')+'/5\n\n'+m;
+ try{
+  if(!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
+  await navigator.clipboard.writeText(content);
+  fallback.hidden=true;
+  result.textContent='Copied! This message has not been sent. Please paste it into a message to the restaurant.';
+ }catch{
+  fallback.hidden=false;
+  fallback.value=content;
+  fallback.focus();fallback.select();
+  result.textContent='Automatic copying is unavailable. Select and copy the text below, then send it to the restaurant.';
+ }
+});</script></body></html>
